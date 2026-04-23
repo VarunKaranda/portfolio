@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varun Karanda – Software Engineer Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ─── TOKENS ─── */
+    :root {
+      --ink: #0d1117;
+      /* near-black for name & headings  */
+      --company: #1a2744;
+      /* deep navy for company names      */
+      --accent: #1d4ed8;
+      /* strong blue for section titles   */
+      --role-color: #0369a1;
+      /* teal-blue for job role titles    */
+      --body: #2d3748;
+      /* dark slate for body copy         */
+      --muted: #475569;
+      /* grey for dates, location         */
+      --rule: #c7d2fe;
+      /* light indigo rule under headings */
+      --tag: #475569;
+      /* italic tag text                  */
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 10pt;
+      color: var(--body);
+      background: #fff;
+      line-height: 1.58;
+    }
+
+    /* ─── PAGE ─── */
+    .page {
+      width: 210mm;
+      margin: 0 auto;
+      padding: 5mm;
+      background: #fff;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26pt;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .header .title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+      letter-spacing: 0.2px;
+    }
+
+    .contact-row {
+      margin-top: 7px;
+      font-size: 9pt;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 16px;
+      align-items: center;
+    }
+
+    .contact-row .sep {
+      color: #cbd5e1;
+    }
+
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ─── SECTION ─── */
+    .section {
+      margin-top: 11px;
+    }
+
+    .section-title {
+      font-size: 12pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--accent);
+      border-bottom: 1.5px solid var(--rule);
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    /* ─── SUMMARY ─── */
+    .summary p {
+      font-size: 10pt;
+      color: var(--body);
+      line-height: 1.6;
+    }
+
+    /* ─── SKILLS ─── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      row-gap: 4px;
+    }
+
+    .skills-grid .label {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--company);
+    }
+
+    .skills-grid .value {
+      font-size: 9.5pt;
+      color: var(--body);
+    }
+
+    /* ─── EXPERIENCE ─── */
+    .company-block {
+      margin-bottom: 12px;
+    }
+
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .company-name {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: var(--company);
+    }
+
+    .company-loc {
+      font-size: 9pt;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* individual role inside a company */
+    .role-block {
+      margin-top: 6px;
+      padding-left: 10px;
+      border-left: 2px solid var(--rule);
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .role-title {
+      font-size: 11.5pt;
+      font-weight: 600;
+      color: var(--company);
+    }
+
+    .dates {
+      font-size: 9pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    ul.bullets {
+      margin-top: 5px;
+      padding-left: 15px;
+      list-style: disc;
+    }
+
+    ul.bullets li {
+      font-size: 9.5pt;
+      color: var(--body);
+      margin-bottom: 3px;
+      line-height: 1.55;
+    }
+
+    ul.bullets li strong {
+      color: var(--company);
+      font-weight: 600;
+    }
+
+    /* ─── PROJECTS ─── */
+    .project {
+      margin-bottom: 8px;
+    }
+
+    .project-name {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--company);
+    }
+
+    .project-tag {
+      font-size: 9pt;
+      color: var(--tag);
+      font-style: italic;
+    }
+
+    .project p {
+      font-size: 9.5pt;
+      color: var(--body);
+      margin-top: 2px;
+      line-height: 1.55;
+    }
+
+    /* ─── CERTIFICATIONS ─── */
+    .certs-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .certs-list li {
+      font-size: 9.5pt;
+      color: var(--body);
+      margin-bottom: 4px;
+      padding-left: 13px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .certs-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      top: 0px;
+      color: var(--accent);
+      font-size: 9pt;
+    }
+
+    .certs-list .cert-name {
+      font-weight: 500;
+      color: var(--company);
+    }
+
+    .certs-list .cert-issuer {
+      color: var(--muted);
+    }
+
+    .certs-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 8.5pt;
+      margin-left: 5px;
+    }
+
+    /* ─── EDUCATION ─── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .edu-degree {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--company);
+    }
+
+    .edu-college {
+      font-size: 9.5pt;
+      color: var(--body);
+      margin-top: 2px;
+    }
+
+    .edu-meta {
+      font-size: 9pt;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    /* ─── PAGE BREAKS ─── */
+    .page-break-before {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .role-block {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .project {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .certs-list li {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .edu-row {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        color: var(--accent) !important;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 14mm 16mm 14mm 16mm;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ══ HEADER ══ -->
+    <header class="header">
+      <h1>Varun Karanda</h1>
+      <div class="title">Frontend Engineer &ndash; II </div>
+      <div class="contact-row">
+        <span>+91 80759 72279</span>
+        <span class="sep">|</span>
+        <span>Kannur, Kerala, India</span>
+        <span class="sep">|</span>
+        <span>varunkaranda@gmail.com</span>
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/varun-karanda/">linkedin.com/in/varunkaranda/</a>
+      </div>
+    </header>
+
+    <!-- ══ SUMMARY ══ -->
+    <section class="section summary">
+      <div class="section-title">Professional Summary</div>
+      <p>
+        Frontend Engineer with 5 years of experience building scalable web applications using React.js, TypeScript, and
+        modern
+        JavaScript (ES6+). Skilled in state management (Redux, Redux-Saga), RESTful API integration, and performance
+        optimization. Core contributor to <strong>K-SMART</strong>, a state-scale platform supporting
+        <strong>35M+</strong>
+        users. Experienced in complex
+        form
+        workflows, asynchronous data handling, and production debugging. Exploring AI applications using LangChain.
+      </p>
+    </section>
+
+    <!-- ══ SKILLS ══ -->
+    <section class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <span class="label">Frontend</span>
+        <span class="value">React.js, JavaScript, TypeScript, React Hooks, Redux Toolkit, Redux-Saga, React Hook
+          Form</span>
+
+        <span class="label">UI & Styling</span>
+        <span class="value">Tailwind CSS, Chakra UI, Styled Components, HTML5, CSS3</span>
+
+        <span class="label">Backend & APIs</span>
+        <span class="value">Python (Flask, Django), Node.js, SQL, REST APIs, API Integration</span>
+
+        <span class="label">Tools</span>
+        <span class="value">Git, GitHub, Redis, AWS S3, Puppeteer, K9s</span>
+
+        <span class="label">Testing</span>
+        <span class="value">Vitest, Unit Testing, Component Testing, Test-Driven Debugging</span>
+
+        <span class="label">AI &amp; Emerging</span>
+        <span class="value">LangChain, LLM Concepts, Agentic AI</span>
+
+        <span class="label">Practices</span>
+        <span class="value">Agile, Code Review, Responsive Design, Accessibility, Debugging, Problem Solving</span>
+      </div>
+    </section>
+
+    <!-- ══ EXPERIENCE ══ -->
+    <section class="section">
+      <div class="section-title">Professional Experience</div>
+
+      <!-- ── Edstem ── -->
+      <div class="company-block">
+        <div class="company-header">
+          <span class="company-name">Edstem Technologies Pvt. Ltd.</span>
+          <span class="company-loc">Kochi, Kerala, India</span>
+        </div>
+
+        <!-- Role 1: Software Engineer-2 -->
+        <div class="role-block">
+          <div class="role-header">
+            <span class="role-title">Software Engineer 2</span>
+            <span class="dates">May 2024 &ndash; Present</span>
+          </div>
+          <ul class="bullets">
+            <li>
+              Led end-to-end frontend delivery for <strong>K-SMART’s</strong> Hindu Marriage (Civil Registration) and
+              Rent Module (Property Tax),
+              contributing to design decisions for scalable multi-step workflows.
+            </li>
+            <li>
+              Drove integration and enhancement of civil registration workflows <strong>(Birth, Death &
+                Marriage)</strong>, supporting
+              <strong>35M+</strong> users.
+            </li>
+            <li>
+              Contributed to the integration of <strong>150+ REST APIs</strong> across large-scale service modules,
+              implementing centralized error
+              handling and diagnosing production issues using <strong>K9s</strong> and <strong>Kubernetes logs.</strong>
+            </li>
+            <li>Partnered on building a document generation service using <strong>Puppeteer, Redis, and AWS S3</strong>,
+              contributing to
+              <strong>Redis-based job</strong>
+              deduplication and <strong>S3 caching</strong> to reduce certificate retrieval time from multi-second
+              rendering to
+              sub-second responses
+              under peak traffic.
+            </li>
+            <li>Led and mentored a frontend <strong>team of 8</strong>, conducting structured code reviews with
+              <strong>24–48</strong>
+              hour turnaround, and collaborating
+              with backend and QA teams to maintain release quality.
+            </li>
+          </ul>
+        </div>
+        <!-- Role 2: Software Engineer -->
+        <div class="role-block">
+          <div class="role-header">
+            <span class="role-title">Software Engineer</span>
+            <span class="dates">Jun 2022 &ndash; Apr 2024</span>
+          </div>
+          <ul class="bullets">
+            <li>
+              Developed and maintained the shared <strong>React component library</strong> used across <strong>K-SMART
+              </strong> modules, establishing
+              reusable UI
+              patterns that improved consistency and reduced duplication across the platform.
+            </li>
+            <li>
+              Initiated development of core civil registration workflows <strong>(Birth, Death &
+                Marriage)</strong>,
+              establishing the
+              foundation for
+              multi-step forms with dynamic validation and role-based access.
+            </li>
+            <li>
+              Implemented complex registration flows using <strong>React Hook Form </strong> and
+              <strong>Redux-Saga</strong>, improving
+              data consistency
+              and reducing validation errors by <strong>~20%</strong> across citizen-facing modules.
+            </li>
+            <li>Integrated REST APIs across multiple service modules, managing asynchronous state using
+              <strong>Redux-Saga</strong>
+              and contributing
+              to centralized error handling patterns across the platform.
+            </li>
+          </ul>
+        </div>
+        <!-- Role 2: Junior Software Engineer -->
+        <div class="role-block" style="margin-top:8px;">
+          <div class="role-header">
+            <span class="role-title">Junior Software Engineer</span>
+            <span class="dates">Jun 2021 &ndash; May 2022</span>
+          </div>
+          <ul class="bullets">
+            <li>Built a feature-rich expert marketplace (RecSperts – USA) using React, implementing multi-criteria
+              search, real-time
+              booking workflows, and provider analytics dashboards.</li>
+            <li>Built compliance and risk visualisation dashboards for Crown Jewel – an Australian enterprise
+              cybersecurity platform –
+              translating complex asset-protection data into interactive panels for non-technical stakeholders.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── My Softnet ── -->
+      <div class="company-block">
+        <div class="company-header">
+          <span class="company-name">My Softnet</span>
+          <span class="company-loc">Kerala, India</span>
+        </div>
+        <div class="role-block">
+          <div class="role-header">
+            <span class="role-title">Frontend Intern</span>
+            <span class="dates">Nov 2020 &ndash; May 2021</span>
+          </div>
+          <ul class="bullets">
+            <li>Developed responsive and accessible UI components using React.js, and contributed to identifying and
+              resolving API
+              integration issues in a production environment.</li>
+            <li>Gained hands-on experience across the frontend development lifecycle, including translating design
+              mockups into UI and
+              contributing to feature releases in a collaborative development environment.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROJECTS ══ -->
+    <section class="section">
+      <div class="section-title">Key Projects</div>
+
+      <div class="project">
+        <span class="project-name">K-SMART Civil Registration Platform</span>
+        <span class="project-tag"> &mdash; Government of Kerala</span>
+        <p>State-wide e-governance platform unifying 15+ modules for Local Self Government Institutions, covering civil
+          registration, property tax, building permits, pensions, finance, and more, with real-time tracking and digital
+          certificate issuance, supporting <strong>35M+ users</strong>.</p>
+      </div>
+
+      <div class="project">
+        <span class="project-name">PDF &amp; Certificate Generation Service</span>
+        <span class="project-tag"> &mdash; Government of Kerala</span>
+        <p>Asynchronous document generation pipeline using Puppeteer, Redis, and AWS S3, designed for high-volume
+          certificate
+          processing, optimizing performance through caching and request deduplication.</p>
+      </div>
+
+      <div class="project">
+        <span class="project-name">RecSperts &ndash; Expert Marketplace</span>
+        <span class="project-tag"> &mdash; USA</span>
+        <p>Marketplace platform connecting service providers with users across multiple categories, featuring
+          authentication, booking workflows, reviews, and analytics dashboards, with reusable UI components for
+          scalability and a consistent, responsive design.</p>
+      </div>
+
+      <div class="project">
+        <span class="project-name">Crown Jewel &ndash; Cyber Resilience System</span>
+        <span class="project-tag"> &mdash; Australia</span>
+        <p>Enterprise cybersecurity platform providing compliance and risk visualization through interactive dashboards,
+          translating complex asset-protection data into actionable insights for non-technical stakeholders, with
+          real-time
+          monitoring and exportable reports.</p>
+      </div>
+    </section>
+
+    <!-- ══ CERTIFICATIONS ══ -->
+    <section class="section">
+      <div class="section-title">Certifications</div>
+      <ul class="certs-list">
+        <li>
+          <span class="cert-name">Microsoft Azure AI Fundamentals (AI-900)</span>
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/varunkaranda/34BE79F88F323A65?sharingId=8ABD49D609BE9A1B"
+            target="_blank">[Credential Available]</a>
+        </li>
+        <li>
+          <span class="cert-name">Claude Code in Action</span>
+          <span class="cert-issuer"> &mdash; Anthropic</span>
+          <a href="https://verify.skilljar.com/c/58wqspn5esze" target="_blank">[Credential
+            Available]</a>
+        </li>
+        <li>
+          <span class="cert-name">Gemini CLI: Code &amp; Create with an Open-Source Agent</span>
+          <span class="cert-issuer"> &mdash; Google</span>
+        </li>
+        <li>
+          <span class="cert-name">Agent Skills with Anthropic</span>
+          <span class="cert-issuer"> &mdash; Anthropic</span>
+        </li>
+        <li>
+          <span class="cert-name">Agentic AI</span>
+          <span class="cert-issuer"> &mdash; DeepLearning.AI</span>
+          <a href="https://learn.deeplearning.ai/certificates/70d5085a-8f64-4675-9151-9f87d6aab875?usp=sharing"
+            target="_blank">[Credential
+            Available]</a>
+        </li>
+        <li>
+          <span class="cert-name">LangChain for LLM Application Development</span>
+          <span class="cert-issuer"> &mdash; DeepLearning.AI / Andrew Ng</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ══ EDUCATION ══ -->
+    <section class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-degree">Bachelor of Technology (B.Tech)</div>
+          <div class="edu-college">College of Engineering Trikaripur, Kerala, India</div>
+        </div>
+        <div class="edu-meta">
+          2010 &ndash; 2014
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>
