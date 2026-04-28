@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { staggerContainer, fadeInUp, viewportOptions } from "@/lib/animations";
 import { projects } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Lock } from "lucide-react";
 
 function ProjectCard({ project, index, isLast }: { project: (typeof projects)[0]; index: number; isLast?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -85,10 +85,24 @@ function ProjectCard({ project, index, isLast }: { project: (typeof projects)[0]
                 <p className="text-slate-500 text-xs mt-0.5 italic">{project.tag}</p>
               </div>
             </div>
-            <ExternalLink
-              size={14}
-              className="text-slate-600 group-hover:text-slate-400 transition-colors shrink-0 mt-1"
-            />
+            {/* Live link OR Private badge — never a dead icon */}
+            {project.link ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                title="View Live Site"
+                className="text-slate-500 hover:text-blue-400 transition-colors shrink-0 mt-1"
+              >
+                <ExternalLink size={14} />
+              </a>
+            ) : (
+              <span className="inline-flex items-center gap-1 text-slate-600 text-[10px] font-medium shrink-0 mt-1 select-none">
+                <Lock size={10} />
+                Private
+              </span>
+            )}
           </div>
 
           {/* Description — looser leading on featured */}

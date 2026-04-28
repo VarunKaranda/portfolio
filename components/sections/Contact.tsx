@@ -91,7 +91,7 @@ export default function Contact() {
         {/* Contact cards — equal height */}
         <motion.div
           variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-12 items-stretch"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-12 items-stretch"
         >
           {contactCards.map((card, i) => (
             <motion.div
@@ -113,7 +113,7 @@ export default function Contact() {
                     <card.icon size={18} />
                   </div>
                   <p className="text-slate-500 text-xs mb-1.5 shrink-0">{card.label}</p>
-                  <p className={`${card.color} text-xs font-medium group-hover:underline leading-snug mt-auto`}>
+                  <p className={`${card.color} text-xs font-medium group-hover:underline leading-snug mt-auto break-all`}>
                     {card.value}
                   </p>
                 </a>
@@ -123,7 +123,7 @@ export default function Contact() {
                     <card.icon size={18} />
                   </div>
                   <p className="text-slate-500 text-xs mb-1.5 shrink-0">{card.label}</p>
-                  <p className={`${card.color} text-xs font-medium leading-snug mt-auto`}>{card.value}</p>
+                  <p className={`${card.color} text-xs font-medium leading-snug mt-auto break-all`}>{card.value}</p>
                 </div>
               )}
             </motion.div>
@@ -139,7 +139,7 @@ export default function Contact() {
             href={`mailto:${personalInfo.email}`}
             whileHover={{ scale: 1.06, boxShadow: "0 0 60px rgba(59,130,246,0.6), 0 0 100px rgba(103,232,249,0.3)" }}
             whileTap={{ scale: 0.97 }}
-            className="cta-pulse inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold rounded-xl transition-all duration-300 text-sm"
+            className="cta-pulse inline-flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold rounded-xl transition-all duration-300 text-sm"
           >
             <Mail size={16} />
             Send Me an Email

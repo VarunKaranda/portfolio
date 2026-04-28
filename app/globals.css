@@ -74,6 +74,7 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* prevent root-level horizontal scroll */
     @apply font-sans;
   }
   body {
@@ -81,7 +82,8 @@
     background: #020617;
     color: #e2e8f0;
     font-family: var(--font-sans, Inter, sans-serif);
-    overflow-x: hidden;
+    overflow-x: hidden; /* belt-and-suspenders with html */
+    min-width: 0;       /* prevents flex/grid children from expanding body */
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading, 'Space Grotesk', sans-serif);

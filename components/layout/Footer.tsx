@@ -51,9 +51,9 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-white/8 bg-[#020617]">
-      {/* Top gradient glow */}
+      {/* Top gradient glow — w-full prevents overflow at <600px viewports */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.5), rgba(103,232,249,0.5), transparent)" }}
       />
 
@@ -65,7 +65,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-3 md:grid-cols-6 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-4"
           >
             {highlights.map((h) => (
               <div key={h.label} className="text-center">
@@ -98,7 +98,7 @@ export default function Footer() {
             </button>
 
             <p className="text-slate-500 text-sm leading-relaxed mb-5">
-              Frontend Engineer – II crafting scalable, production-grade web applications
+              Frontend Engineer crafting scalable, production-grade web applications
               with React &amp; modern JS. Core contributor to K-SMART serving 35M+ users.
             </p>
 
@@ -176,7 +176,7 @@ export default function Footer() {
                   className="text-slate-500 hover:text-blue-400 text-sm transition-colors duration-200 flex items-start gap-2.5 group"
                 >
                   <Mail size={13} className="text-slate-700 group-hover:text-blue-400 transition-colors shrink-0 mt-0.5" />
-                  <span>{personalInfo.email}</span>
+                  <span className="break-all">{personalInfo.email}</span>
                 </a>
               </li>
               <li>
@@ -252,18 +252,16 @@ export default function Footer() {
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-white/5 px-6 py-5">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-1.5 text-xs text-slate-600">
-            <span>© {new Date().getFullYear()} Varun Karanda.</span>
-            <span className="text-slate-700">·</span>
-            <span>Built with</span>
-            <Heart size={10} className="text-red-500 fill-red-500 mx-0.5" />
-            <span>in Kerala, India.</span>
-          </div>
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-xs text-slate-600">
+            &copy; {new Date().getFullYear()} Varun Karanda &middot; Built with{" "}
+            <Heart size={10} className="text-red-500 fill-red-500 inline mx-0.5" />
+            {" "}in Kerala, India.
+          </p>
 
           <div className="flex items-center gap-5">
             <span className="text-xs text-slate-700 hidden sm:block">
-              {experience.reduce((acc, c) => acc + c.roles.length, 0)} roles · {projects.length} projects · {certifications.length} certifications
+              {experience.reduce((acc, c) => acc + c.roles.length, 0)} roles &middot; {projects.length} projects &middot; {certifications.length} certifications
             </span>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

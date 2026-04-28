@@ -125,6 +125,7 @@ export const projects = [
     icon: "🏛️",
     color: "from-blue-600/20 to-cyan-600/20",
     borderColor: "border-blue-500/30",
+    link: "https://ksmart.lsgkerala.gov.in/ui/web-portal",
   },
   {
     name: "PDF & Certificate Generation Service",
@@ -136,6 +137,7 @@ export const projects = [
     icon: "📄",
     color: "from-purple-600/20 to-pink-600/20",
     borderColor: "border-purple-500/30",
+    link: "",
   },
   {
     name: "RecSperts – Expert Marketplace",
@@ -147,6 +149,7 @@ export const projects = [
     icon: "🌐",
     color: "from-green-600/20 to-teal-600/20",
     borderColor: "border-green-500/30",
+    link: "",
   },
   {
     name: "Crown Jewel – Cyber Resilience System",
@@ -158,6 +161,7 @@ export const projects = [
     icon: "🛡️",
     color: "from-amber-600/20 to-orange-600/20",
     borderColor: "border-amber-500/30",
+    link: "",
   },
 ];
 

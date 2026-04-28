@@ -139,7 +139,7 @@ export default function About() {
             </div>
 
             {/* Contact mini-cards */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {contactItems.map((item) => (
                 <div key={item.label}>
                   {item.href ? (
@@ -185,7 +185,7 @@ export default function About() {
                 key={h.title}
                 variants={fadeInUp}
                 custom={i}
-                whileHover={{ x: 5, scale: 1.01 }}
+                whileHover={{ y: -2, scale: 1.01 }}
                 transition={{ duration: 0.2 }}
                 className={`glass glass-hover rounded-xl p-5 border ${h.bg} cursor-default`}
                 style={{ boxShadow: `0 4px 24px ${h.glow}` }}
