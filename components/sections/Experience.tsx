@@ -25,7 +25,7 @@ function RoleBlock({
       </div>
 
       <div className="glass glass-hover rounded-xl border border-white/6 p-5 group cursor-pointer"
-           onClick={() => setExpanded(!expanded)}>
+        onClick={() => setExpanded(!expanded)}>
         {/* Role header */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
@@ -73,6 +73,7 @@ function RoleBlock({
                     // Metrics
                     .replace(/35M\+ users/g, '<strong class="text-cyan-400 font-bold">35M+ users</strong>')
                     .replace(/150\+ REST APIs/g, '<strong class="text-slate-200">150+ REST APIs</strong>')
+                    .replace(/~20%/g, '<strong class="text-slate-200">~20%</strong>')
                     .replace(/team of 8/g, '<strong class="text-slate-200">team of 8</strong>')
                     .replace(/24–48 hour/g, '<strong class="text-slate-200">24–48 hour</strong>')
                     // Tech stack

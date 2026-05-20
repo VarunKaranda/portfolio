@@ -281,12 +281,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Scroll indicator — lives OUTSIDE flex-1, pinned to real bottom ── */}
+      {/* ── Scroll indicator — absolutely pinned to bottom so it's visible on mobile ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
-        className="relative z-10 flex flex-col items-center gap-1 pb-5 text-slate-400 pointer-events-none shrink-0"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-slate-400 pointer-events-none"
       >
         <span className="text-[10px] tracking-widest uppercase">Scroll</span>
         <motion.div
