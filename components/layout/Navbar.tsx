@@ -59,7 +59,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-3 md:py-4 flex items-center justify-between">
           {/* Logo */}
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

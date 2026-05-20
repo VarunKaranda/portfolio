@@ -136,9 +136,9 @@ function StatCard({ stat, index }: { stat: (typeof stats)[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.1 + index * 0.1, duration: 0.5 }}
-      className="glass glass-hover rounded-xl p-3 text-center cursor-default"
+      className="glass glass-hover rounded-xl p-2.5 md:p-3 text-center cursor-default"
     >
-      <div className={`text-xl font-heading font-bold leading-tight ${color}`}>
+      <div className={`text-lg md:text-xl font-heading font-bold leading-tight ${color}`}>
         {count}{stat.suffix}
       </div>
       <div className="text-[10px] text-slate-400 font-medium tracking-wide uppercase mt-0.5 leading-tight">
@@ -203,7 +203,7 @@ export default function Hero() {
         <Particles />
 
         {/* ── Main content (vertically centered, clears navbar) ── */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center pt-16 px-6">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center pt-14 md:pt-16 px-6">
           <div className="max-w-4xl w-full mx-auto text-center">
 
             {/* Status badge — #8 enlarged + glow */}
@@ -211,7 +211,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2.5 glass border border-green-500/30 text-green-400 text-sm font-semibold px-5 py-2.5 rounded-full mb-6"
+              className="inline-flex items-center gap-2.5 glass border border-green-500/30 text-green-400 text-sm font-semibold px-5 py-2.5 rounded-full mb-4 md:mb-6"
               style={{ boxShadow: '0 0 24px rgba(34,197,94,0.2), 0 0 48px rgba(34,197,94,0.08)' }}
             >
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
@@ -223,7 +223,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3"
+              className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-2 md:mb-3"
             >
               <span className="text-white">{personalInfo.name.split(" ")[0]} </span>
               <span className="text-gradient">{personalInfo.name.split(" ")[1]}</span>
@@ -234,7 +234,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.4 }}
-              className="text-lg md:text-xl font-heading font-medium text-slate-400 mb-2 h-8 flex items-center justify-center"
+              className="text-base md:text-xl font-heading font-medium text-slate-400 mb-1.5 md:mb-2 h-7 md:h-8 flex items-center justify-center"
             >
               <span className="text-slate-200">{typed}</span>
               <span className="cursor-blink text-blue-400 ml-0.5">|</span>
@@ -245,7 +245,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.85, duration: 0.4 }}
-              className="flex items-center justify-center gap-1.5 text-slate-500 text-sm mb-6"
+              className="flex items-center justify-center gap-1.5 text-slate-500 text-sm mb-4 md:mb-6"
             >
               <MapPin size={12} />
               <span>{personalInfo.location}</span>
@@ -256,7 +256,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.4 }}
-              className="flex flex-wrap items-center justify-center gap-3 mb-8"
+              className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3 mb-5 md:mb-8"
             >
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 28px rgba(59,130,246,0.3)" }}
@@ -289,7 +289,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Stats — 2 cols on mobile, 4 on md+ */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-xl mx-auto">
               {stats.map((stat, i) => (
                 <StatCard key={stat.label} stat={stat} index={i} />
               ))}
